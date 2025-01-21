@@ -14,6 +14,8 @@ Usage:
 
 Write your solution in `src/<method-name>.js` file
 
+Go to `test/<method-name>.spec.js` and remove the `.skip` next to the desired test in the line `test.skip('...', () => {...})`
+
 Test your solution by running `npm run test:<methodName>`
 
 To run all tests at once `npm run test`

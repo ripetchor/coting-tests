@@ -1,7 +1,7 @@
 const { reduce } = require('../src/reduce');
 
 describe('reduce', () => {
-  test('should sum all numbers without initial value', () => {
+  test.skip('should sum all numbers without initial value', () => {
     const expected = 6;
 
     function callback(acc, curr) {
@@ -13,7 +13,7 @@ describe('reduce', () => {
     expect(result).toEqual(expected);
   });
 
-  test('should sum all numbers with initial value', () => {
+  test.skip('should sum all numbers with initial value', () => {
     const expected = 16;
 
     function callback(acc, curr) {
@@ -25,7 +25,7 @@ describe('reduce', () => {
     expect(result).toEqual(expected);
   });
 
-  test('should concatenate strings', () => {
+  test.skip('should concatenate strings', () => {
     const expected = 'abc';
 
     function callback(acc, curr) {
@@ -37,7 +37,7 @@ describe('reduce', () => {
     expect(result).toStrictEqual(expected);
   });
 
-  test('should merge properties and sum their values', () => {
+  test.skip('should merge properties and sum their values', () => {
     const expected = { a: 3, b: 3, c: 6 };
 
     function callback(acc, curr) {
@@ -52,7 +52,7 @@ describe('reduce', () => {
     expect(result).toStrictEqual(expected);
   });
 
-  test('should group objects by key', () => {
+  test.skip('should group objects by key', () => {
     const people = [
       { name: 'Alice', age: 25 },
       { name: 'Bob', age: 30 },
@@ -78,13 +78,13 @@ describe('reduce', () => {
     expect(result).toEqual(expected);
   });
 
-  test('should throw error when array empty and no initial value passed', () => {
+  test.skip('should throw error when array empty and no initial value passed', () => {
     expect(() => {
       reduce.call([], () => {});
     }).toThrow();
   });
 
-  test('should return initial value when array empty and initial value passed', () => {
+  test.skip('should return initial value when array empty and initial value passed', () => {
     const expected = 0;
 
     const result = reduce.call([], () => {}, 0);

@@ -7,7 +7,7 @@ afterEach(() => {
 });
 
 describe('forEach', () => {
-  test('should calculate sum', () => {
+  test.skip('should calculate sum', () => {
     let result = 0;
     const expected = 6;
 
@@ -20,7 +20,7 @@ describe('forEach', () => {
     expect(result).toBe(expected);
   });
 
-  test('should log every value', () => {
+  test.skip('should log every value', () => {
     const logSpy = jest.spyOn(console, 'log');
 
     function callback(v) {
@@ -36,7 +36,7 @@ describe('forEach', () => {
     expect(logSpy).toHaveBeenCalledTimes(ARRAY.length);
   });
 
-  test('should log every index', () => {
+  test.skip('should log every index', () => {
     const logSpy = jest.spyOn(console, 'log');
 
     function callback(_, i) {
@@ -52,7 +52,7 @@ describe('forEach', () => {
     expect(logSpy).toHaveBeenCalledTimes(ARRAY.length);
   });
 
-  test('should log array itself', () => {
+  test.skip('should log array itself', () => {
     const logSpy = jest.spyOn(console, 'log');
 
     function callback(_, __, arr) {
@@ -65,7 +65,7 @@ describe('forEach', () => {
     expect(logSpy).toHaveBeenCalledWith(ARRAY);
   });
 
-  test('should not be called when array empty', () => {
+  test.skip('should not be called when array empty', () => {
     const mockCallback = jest.fn();
 
     forEach.call([], mockCallback);

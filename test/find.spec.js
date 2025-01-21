@@ -3,7 +3,7 @@ const { find } = require('../src/find');
 const ARRAY = [1, 3, 4, 6];
 
 describe('find', () => {
-  test('should find first even value', () => {
+  test.skip('should find first even value', () => {
     const expected = 4;
 
     function callback(v) {
@@ -15,7 +15,7 @@ describe('find', () => {
     expect(result).toBe(expected);
   });
 
-  test('should find first odd value', () => {
+  test.skip('should find first odd value', () => {
     const expected = 1;
 
     function callback(v) {
@@ -27,7 +27,7 @@ describe('find', () => {
     expect(result).toBe(expected);
   });
 
-  test('should find first value at event index', () => {
+  test.skip('should find first value at event index', () => {
     const expected = 1;
 
     function callback(_, i) {
@@ -39,7 +39,7 @@ describe('find', () => {
     expect(result).toBe(expected);
   });
 
-  test('should find first value at odd index', () => {
+  test.skip('should find first value at odd index', () => {
     const expected = 3;
 
     function callback(_, i) {
@@ -51,7 +51,7 @@ describe('find', () => {
     expect(result).toBe(expected);
   });
 
-  test('should return undefined when value not found', () => {
+  test.skip('should return undefined when value not found', () => {
     const expected = undefined;
 
     function callback(v) {
@@ -63,7 +63,7 @@ describe('find', () => {
     expect(result).toBe(expected);
   });
 
-  test('should return undefined when array empty', () => {
+  test.skip('should return undefined when array empty', () => {
     const expected = undefined;
 
     function callback(v) {

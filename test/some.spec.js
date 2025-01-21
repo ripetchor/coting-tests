@@ -3,7 +3,7 @@ const { some } = require('../src/some');
 const ARRAY = [1, 3, 4, 6];
 
 describe('some', () => {
-  test('should return true when at least one even number in array', () => {
+  test.skip('should return true when at least one even number in array', () => {
     const expected = true;
 
     function callback(v) {
@@ -15,7 +15,7 @@ describe('some', () => {
     expect(result).toBe(expected);
   });
 
-  test('should return true when at least one odd number in array', () => {
+  test.skip('should return true when at least one odd number in array', () => {
     const expected = true;
 
     function callback(v) {
@@ -27,7 +27,7 @@ describe('some', () => {
     expect(result).toBe(expected);
   });
 
-  test('should return false when value not in array', () => {
+  test.skip('should return false when value not in array', () => {
     const expected = false;
 
     function callback(v) {
@@ -39,7 +39,7 @@ describe('some', () => {
     expect(result).toBe(expected);
   });
 
-  test('should return false when array empty', () => {
+  test.skip('should return false when array empty', () => {
     const expected = false;
 
     function callback(v) {

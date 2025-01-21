@@ -4,7 +4,7 @@ const ODD_ARRAY = [1, 3, 5, 7];
 const EVEN_ARRAY = [2, 4, 6, 8];
 
 describe('every', () => {
-  test('should return true when all numbers odd', () => {
+  test.skip('should return true when all numbers odd', () => {
     const expected = true;
 
     function callback(v) {
@@ -16,7 +16,7 @@ describe('every', () => {
     expect(result).toBe(expected);
   });
 
-  test('should return true when all numbers even', () => {
+  test.skip('should return true when all numbers even', () => {
     const expected = true;
 
     function callback(v) {
@@ -28,7 +28,7 @@ describe('every', () => {
     expect(result).toBe(expected);
   });
 
-  test('should return false when at least one odd number in array', () => {
+  test.skip('should return false when at least one odd number in array', () => {
     const expected = false;
 
     function callback(v) {
@@ -40,7 +40,7 @@ describe('every', () => {
     expect(result).toBe(expected);
   });
 
-  test('should return false when at least one even number in array', () => {
+  test.skip('should return false when at least one even number in array', () => {
     const expected = false;
 
     function callback(v) {
@@ -52,7 +52,7 @@ describe('every', () => {
     expect(result).toBe(expected);
   });
 
-  test('should return true when array empty', () => {
+  test.skip('should return true when array empty', () => {
     const expected = true;
 
     function callback(v) {

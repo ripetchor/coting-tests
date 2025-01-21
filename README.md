@@ -1,6 +1,6 @@
 # coting-tests
 
-Simple and basic tests for .
+Simple and basic tests for polyfills of some array methods.
 
 ---
 

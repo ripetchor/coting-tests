@@ -8,5 +8,3 @@ function every(callbackfn) {
 }
 
 module.exports = { every };
-
-Array.prototype.every;

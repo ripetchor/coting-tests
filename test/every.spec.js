@@ -63,4 +63,64 @@ describe('every', () => {
 
     expect(result).toBe(expected);
   });
+
+  test.skip('should return false when all elements do not satisfy callback', () => {
+    const expected = false;
+
+    function callback(v) {
+      return v > 10;
+    }
+
+    const result = every.call(ODD_ARRAY, callback);
+
+    expect(result).toBe(expected);
+  });
+
+  test.skip('should return true when all elements satisfy callback for positive numbers', () => {
+    const expected = true;
+
+    function callback(v) {
+      return v > 0;
+    }
+
+    const result = every.call([...ODD_ARRAY, ...EVEN_ARRAY], callback);
+
+    expect(result).toBe(expected);
+  });
+
+  test.skip('should return false for mixed positive and negative numbers', () => {
+    const expected = false;
+
+    function callback(v) {
+      return v > 0;
+    }
+
+    const result = every.call([...ODD_ARRAY, -1], callback);
+
+    expect(result).toBe(expected);
+  });
+
+  test.skip('should handle strings in the array correctly', () => {
+    const expected = true;
+
+    function callback(v) {
+      return typeof v === 'string';
+    }
+
+    const result = every.call(['a', 'b', 'c'], callback);
+
+    expect(result).toBe(expected);
+  });
+
+  test.skip('should return true when all elements are the same', () => {
+    const expected = true;
+
+    function callback(v) {
+      return v === 1;
+    }
+
+    const result = every.call([1, 1, 1, 1], callback);
+
+    expect(result).toBe(expected);
+  });
 });

@@ -91,4 +91,48 @@ describe('reduce', () => {
 
     expect(result).toBe(expected);
   });
+
+  test.skip('should flatten nested arrays', () => {
+    const array = [
+      [1, 2],
+      [3, 4],
+      [5, 6],
+    ];
+    const expected = [1, 2, 3, 4, 5, 6];
+
+    function callback(acc, curr) {
+      return acc.concat(curr);
+    }
+
+    const result = reduce.call(array, callback, []);
+
+    expect(result).toEqual(expected);
+  });
+
+  test.skip('should count occurrences of items in an array', () => {
+    const array = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+    const expected = { apple: 3, banana: 2, orange: 1 };
+
+    function callback(acc, curr) {
+      acc[curr] = (acc[curr] || 0) + 1;
+      return acc;
+    }
+
+    const result = reduce.call(array, callback, {});
+
+    expect(result).toEqual(expected);
+  });
+
+  test.skip('should calculate the maximum value in an array', () => {
+    const array = [1, 7, 3, 9, 5];
+    const expected = 9;
+
+    function callback(acc, curr) {
+      return Math.max(acc, curr);
+    }
+
+    const result = reduce.call(array, callback, -Infinity);
+
+    expect(result).toBe(expected);
+  });
 });

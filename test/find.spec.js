@@ -27,7 +27,7 @@ describe('find', () => {
     expect(result).toBe(expected);
   });
 
-  test.skip('should find first value at event index', () => {
+  test.skip('should find first value at even index', () => {
     const expected = 1;
 
     function callback(_, i) {
@@ -71,6 +71,55 @@ describe('find', () => {
     }
 
     const result = find.call([], callback);
+
+    expect(result).toBe(expected);
+  });
+
+  test.skip('should find first value greater than 5', () => {
+    const expected = 6;
+
+    function callback(v) {
+      return v > 5;
+    }
+
+    const result = find.call(ARRAY, callback);
+
+    expect(result).toBe(expected);
+  });
+
+  test.skip('should return undefined for all negative callback results', () => {
+    const expected = undefined;
+
+    function callback(v) {
+      return v < 0;
+    }
+
+    const result = find.call(ARRAY, callback);
+
+    expect(result).toBe(expected);
+  });
+
+  test.skip('should find the first value divisible by 3', () => {
+    const expected = 3;
+
+    function callback(v) {
+      return v % 3 === 0;
+    }
+
+    const result = find.call(ARRAY, callback);
+
+    expect(result).toBe(expected);
+  });
+
+  test.skip('should find the first string in a mixed array', () => {
+    const mixedArray = [1, 'hello', true, 4];
+    const expected = 'hello';
+
+    function callback(v) {
+      return typeof v === 'string';
+    }
+
+    const result = find.call(mixedArray, callback);
 
     expect(result).toBe(expected);
   });

@@ -10,7 +10,13 @@
     "test:find": "jest ./test/find.spec.js",
     "test:for-each": "jest ./test/for-each.spec.js",
     "test:reduce": "jest ./test/reduce.spec.js",
-    "test:some": "jest ./test/some.spec.js"
+    "test:some": "jest ./test/some.spec.js",
+    "test:slice": "jest ./test/slice.spec.js",
+    "test:includes": "jest ./test/includes.spec.js",
+    "test:reverse": "jest ./test/reverse.spec.js",
+    "test:concat": "jest ./test/concat.spec.js",
+    "test:flat": "jest ./test/flat.spec.js",
+    "test:splice": "jest ./test/flat.splice.js"
   },
   "repository": {
     "type": "git",

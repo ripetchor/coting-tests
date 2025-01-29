@@ -58,7 +58,7 @@ describe('slice', () => {
     expect(result).toEqual(['c', 'd', 'e']);
   });
 
-  test.skip('should throw TypeError when called on a non-array object', () => {
-    expect(() => slice.call({})).toThrow(TypeError);
+  test.skip('should throw TypeError when called on a null object', () => {
+    expect(() => slice.call(null)).toThrow(TypeError);
   });
 });

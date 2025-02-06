@@ -14,7 +14,7 @@
     "test:slice": "jest ./test/slice.spec.js",
     "test:includes": "jest ./test/includes.spec.js",
     "test:reverse": "jest ./test/reverse.spec.js",
-    "test:concat": "jest ./test/concat.spec.js",
+    "test:concat": "vitest ./test/concat.spec.ts",
     "test:flat": "jest ./test/flat.spec.js",
     "test:splice": "jest ./test/flat.splice.js"
   },

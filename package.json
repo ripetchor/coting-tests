@@ -9,7 +9,7 @@
     "test:find-index": "vitest ./test/find-index.spec.ts",
     "test:find": "vitest ./test/find.spec.ts",
     "test:for-each": "jest ./test/for-each.spec.js",
-    "test:reduce": "jest ./test/reduce.spec.js",
+    "test:reduce": "vitest ./test/reduce.spec.ts",
     "test:some": "jest ./test/some.spec.js",
     "test:slice": "jest ./test/slice.spec.js",
     "test:includes": "vitest ./test/includes.spec.ts",

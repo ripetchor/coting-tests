@@ -6,7 +6,7 @@
   "scripts": {
     "test": "vitest",
     "test:every": "vitest ./test/every.spec.ts",
-    "test:find-index": "jest ./test/find-index.spec.js",
+    "test:find-index": "vitest ./test/find-index.spec.ts",
     "test:find": "vitest ./test/find.spec.ts",
     "test:for-each": "jest ./test/for-each.spec.js",
     "test:reduce": "jest ./test/reduce.spec.js",

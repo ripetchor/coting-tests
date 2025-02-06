@@ -1,4 +1,6 @@
-const { every } = require('../src/every');
+import { describe, test, expect } from 'vitest';
+
+import { every } from '../src/every';
 
 const ODD_ARRAY = [1, 3, 5, 7];
 const EVEN_ARRAY = [2, 4, 6, 8];
@@ -122,5 +124,17 @@ describe('every', () => {
     const result = every.call([1, 1, 1, 1], callback);
 
     expect(result).toBe(expected);
+  });
+
+  test.skip('should use thisArg as callback context', () => {
+    const context = { threshold: 5 };
+
+    function callback(this: { threshold: number }, v: number) {
+      return v < this.threshold;
+    }
+
+    const result = every.call([1, 2, 3, 4], callback, context);
+
+    expect(result).toBe(true);
   });
 });

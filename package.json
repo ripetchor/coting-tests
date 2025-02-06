@@ -16,7 +16,7 @@
     "test:reverse": "vitest ./test/reverse.spec.ts",
     "test:concat": "vitest ./test/concat.spec.ts",
     "test:flat": "vitest ./test/flat.spec.ts",
-    "test:splice": "jest ./test/flat.splice.js"
+    "test:splice": "vitest ./test/splice.spec.ts"
   },
   "repository": {
     "type": "git",

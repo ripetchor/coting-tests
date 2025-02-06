@@ -1,6 +1,16 @@
-const { splice } = require('../src/splice');
+import { describe, expect, test } from 'vitest';
+
+import { splice } from '../src/splice';
 
 describe('splice', () => {
+  test.skip('should add elements at the specified index', () => {
+    const array = [1, 2, 3, 4];
+    const result = splice.call(array, 2, 0, 'a', 'b');
+
+    expect(result).toEqual([]);
+    expect(array).toEqual([1, 2, 'a', 'b', 3, 4]);
+  });
+
   test.skip('should add elements at the specified index', () => {
     const array = [1, 2, 3, 4];
     const result = splice.call(array, 2, 0, 'a', 'b');
@@ -33,12 +43,12 @@ describe('splice', () => {
     expect(array).toEqual([1, 2, 'a', 'b', 5]);
   });
 
-  test.skip('should return an empty array if no elements are removed', () => {
+  test.skip('should return an empty array when no elements are removed and new elements are added', () => {
     const array = [1, 2, 3];
     const result = splice.call(array, 2, 0, 4, 5);
 
     expect(result).toEqual([]);
-    expect(array).toEqual([1, 2, 3, 4, 5]);
+    expect(array).toEqual([1, 2, 4, 5, 3]);
   });
 
   test.skip('should handle start index greater than array length', () => {

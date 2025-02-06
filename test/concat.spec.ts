@@ -1,4 +1,6 @@
-const { concat } = require('../src/concat');
+import { describe, test, expect } from 'vitest';
+
+import { concat } from '../src/concat';
 
 describe('concat', () => {
   test.skip('should concatenate two arrays', () => {

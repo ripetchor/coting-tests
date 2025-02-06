@@ -1,4 +1,6 @@
-const { flat } = require('../src/flat');
+import { describe, test, expect } from 'vitest';
+
+import { flat } from '../src/flat';
 
 describe('flat', () => {
   test.skip('should flatten an array with one level of nested arrays', () => {

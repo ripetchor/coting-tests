@@ -1,4 +1,6 @@
-const { find } = require('../src/find');
+import { describe, expect, test } from 'vitest';
+
+import { find } from '../src/find';
 
 const ARRAY = [1, 3, 4, 6];
 
@@ -122,5 +124,18 @@ describe('find', () => {
     const result = find.call(mixedArray, callback);
 
     expect(result).toBe(expected);
+  });
+
+  test.skip('should use thisArg correctly', () => {
+    const array = [10, 20, 30];
+    const context = { threshold: 15 };
+
+    function callback(v) {
+      return v > this.threshold;
+    }
+
+    const result = find.call(array, callback, context);
+
+    expect(result).toBe(20);
   });
 });

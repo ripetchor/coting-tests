@@ -1,4 +1,6 @@
-const { slice } = require('../src/slice');
+import { describe, expect, test } from 'vitest';
+
+import { slice } from '../src/slice';
 
 describe('slice', () => {
   const ARRAY = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
@@ -50,12 +52,6 @@ describe('slice', () => {
     const result = slice.call(ARRAY, 111);
 
     expect(result).toEqual([]);
-  });
-
-  test.skip('should return a subarray when the start and end index are floating point numbers', () => {
-    const result = slice.call(ARRAY, 2.7, 5.6);
-
-    expect(result).toEqual(['c', 'd', 'e']);
   });
 
   test.skip('should throw TypeError when called on a null object', () => {

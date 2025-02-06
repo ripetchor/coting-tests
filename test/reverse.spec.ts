@@ -1,4 +1,6 @@
-const { reverse } = require('../src/reverse');
+import { describe, expect, test } from 'vitest';
+
+import { reverse } from '../src/reverse';
 
 describe('reverse', () => {
   test.skip('should reverse an array of strings', () => {
@@ -74,6 +76,6 @@ describe('reverse', () => {
   });
 
   test.skip('should throw TypeError when called on a null object', () => {
-    expect(() => reverse.call({})).toThrow(TypeError);
+    expect(() => reverse.call(null)).toThrow(TypeError);
   });
 });

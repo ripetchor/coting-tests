@@ -4,19 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:every": "jest ./test/every.spec.js",
-    "test:find-index": "jest ./test/find-index.spec.js",
-    "test:find": "jest ./test/find.spec.js",
-    "test:for-each": "jest ./test/for-each.spec.js",
-    "test:reduce": "jest ./test/reduce.spec.js",
-    "test:some": "jest ./test/some.spec.js",
-    "test:slice": "jest ./test/slice.spec.js",
-    "test:includes": "jest ./test/includes.spec.js",
-    "test:reverse": "jest ./test/reverse.spec.js",
-    "test:concat": "jest ./test/concat.spec.js",
-    "test:flat": "jest ./test/flat.spec.js",
-    "test:splice": "jest ./test/flat.splice.js"
+    "test": "vitest",
+    "test:every": "vitest ./test/every.spec.ts",
+    "test:find-index": "vitest ./test/find-index.spec.ts",
+    "test:find": "vitest ./test/find.spec.ts",
+    "test:for-each": "vitest ./test/for-each.spec.ts",
+    "test:reduce": "vitest ./test/reduce.spec.ts",
+    "test:some": "vitest ./test/some.spec.ts",
+    "test:slice": "vitest ./test/slice.spec.ts",
+    "test:includes": "vitest ./test/includes.spec.ts",
+    "test:reverse": "vitest ./test/reverse.spec.ts",
+    "test:concat": "vitest ./test/concat.spec.ts",
+    "test:flat": "vitest ./test/flat.spec.ts",
+    "test:splice": "vitest ./test/splice.spec.ts"
   },
   "repository": {
     "type": "git",
@@ -31,8 +31,7 @@
   },
   "homepage": "https://github.com/ripetchor/coting-tests#readme",
   "devDependencies": {
-    "@types/jest": "^29.5.14",
     "@types/node": "^22.10.7",
-    "jest": "^29.7.0"
+    "vitest": "^3.0.5"
   }
 }

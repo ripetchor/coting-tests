@@ -1,4 +1,6 @@
-const { reduce } = require('../src/reduce');
+import { describe, expect, test } from 'vitest';
+
+import { reduce } from '../src/reduce';
 
 describe('reduce', () => {
   test.skip('should sum all numbers without initial value', () => {

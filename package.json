@@ -11,7 +11,7 @@
     "test:for-each": "jest ./test/for-each.spec.js",
     "test:reduce": "vitest ./test/reduce.spec.ts",
     "test:some": "jest ./test/some.spec.js",
-    "test:slice": "jest ./test/slice.spec.js",
+    "test:slice": "vitest ./test/slice.spec.ts",
     "test:includes": "vitest ./test/includes.spec.ts",
     "test:reverse": "vitest ./test/reverse.spec.ts",
     "test:concat": "vitest ./test/concat.spec.ts",

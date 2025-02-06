@@ -1,17 +1,15 @@
-const { forEach } = require('../src/for-each');
+import { describe, expect, test, vi } from 'vitest';
+
+import { forEach } from '../src/for-each';
 
 const ARRAY = [1, 2, 3];
-
-afterEach(() => {
-  jest.resetAllMocks();
-});
 
 describe('forEach', () => {
   test.skip('should calculate sum', () => {
     let result = 0;
     const expected = 6;
 
-    function callback(v) {
+    function callback(v: number) {
       result += v;
     }
 
@@ -21,10 +19,10 @@ describe('forEach', () => {
   });
 
   test.skip('should log every value', () => {
-    const logSpy = jest.spyOn(console, 'log');
+    const logSpy = vi.fn();
 
-    function callback(v) {
-      console.log(v);
+    function callback(v: number) {
+      logSpy(v);
     }
 
     forEach.call(ARRAY, callback);
@@ -34,13 +32,15 @@ describe('forEach', () => {
     expect(logSpy).toHaveBeenCalledWith(ARRAY[2]);
 
     expect(logSpy).toHaveBeenCalledTimes(ARRAY.length);
+
+    logSpy.mockRestore();
   });
 
   test.skip('should log every index', () => {
-    const logSpy = jest.spyOn(console, 'log');
+    const logSpy = vi.fn();
 
-    function callback(_, i) {
-      console.log(i);
+    function callback(_: number, i: number) {
+      logSpy(i);
     }
 
     forEach.call(ARRAY, callback);
@@ -50,36 +50,40 @@ describe('forEach', () => {
     expect(logSpy).toHaveBeenCalledWith(2);
 
     expect(logSpy).toHaveBeenCalledTimes(ARRAY.length);
+
+    logSpy.mockRestore();
   });
 
   test.skip('should log array itself', () => {
-    const logSpy = jest.spyOn(console, 'log');
+    const logSpy = vi.fn();
 
-    function callback(_, __, arr) {
-      console.log(arr);
+    function callback(_: number, __: number, arr: number[]) {
+      logSpy(arr);
     }
 
     forEach.call(ARRAY, callback);
 
     expect(logSpy).toHaveBeenCalledTimes(ARRAY.length);
     expect(logSpy).toHaveBeenCalledWith(ARRAY);
+
+    logSpy.mockRestore();
   });
 
   test.skip('should not be called when array empty', () => {
-    const mockCallback = jest.fn();
+    const mockCallback = vi.fn();
 
     forEach.call([], mockCallback);
 
     expect(mockCallback).not.toHaveBeenCalled();
 
-    mockCallback.mockClear();
+    mockCallback.mockRestore();
   });
 
   test.skip('should apply callback to every element', () => {
-    const results = [];
+    const results: number[] = [];
     const expected = [2, 4, 6];
 
-    function callback(v) {
+    function callback(v: number) {
       results.push(v * 2);
     }
 
@@ -90,9 +94,9 @@ describe('forEach', () => {
 
   test.skip('should handle mixed data types in array', () => {
     const mixedArray = [1, 'text', true];
-    const results = [];
+    const results: string[] = [];
 
-    function callback(v) {
+    function callback(v: unknown) {
       results.push(typeof v);
     }
 
@@ -119,9 +123,9 @@ describe('forEach', () => {
       [3, 4],
       [5, 6],
     ];
-    const results = [];
+    const results: number[] = [];
 
-    function callback(v) {
+    function callback(v: number[]) {
       results.push(...v);
     }
 
@@ -131,12 +135,14 @@ describe('forEach', () => {
   });
 
   test.skip('should verify callback receives all arguments', () => {
-    const mockCallback = jest.fn();
+    const mockCallback = vi.fn();
 
     forEach.call(ARRAY, mockCallback);
 
     ARRAY.forEach((v, i, arr) => {
       expect(mockCallback).toHaveBeenCalledWith(v, i, arr);
     });
+
+    mockCallback.mockRestore();
   });
 });

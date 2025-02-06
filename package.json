@@ -8,7 +8,7 @@
     "test:every": "vitest ./test/every.spec.ts",
     "test:find-index": "vitest ./test/find-index.spec.ts",
     "test:find": "vitest ./test/find.spec.ts",
-    "test:for-each": "jest ./test/for-each.spec.js",
+    "test:for-each": "vitest ./test/for-each.spec.ts",
     "test:reduce": "vitest ./test/reduce.spec.ts",
     "test:some": "vitest ./test/some.spec.ts",
     "test:slice": "vitest ./test/slice.spec.ts",

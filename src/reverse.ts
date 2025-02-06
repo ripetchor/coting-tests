@@ -1,3 +1,3 @@
-export function reverse<T>(this: T[]): T[] {
+export function reverse<T>(): T[] {
   // your implementation
 }

@@ -1,3 +1,3 @@
-export function slice<T>(this: T[], start?: number, end?: number): T[] {
+export function slice<T>(start?: number, end?: number): T[] {
   // your implementation
 }

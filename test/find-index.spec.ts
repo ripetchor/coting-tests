@@ -1,4 +1,6 @@
-const { findIndex } = require('../src/find-index');
+import { describe, expect, test } from 'vitest';
+
+import { findIndex } from '../src/find-index';
 
 const ARRAY = [1, 3, 4, 6];
 
@@ -122,5 +124,17 @@ describe('findIndex', () => {
     const result = findIndex.call(mixedArray, callback);
 
     expect(result).toBe(expected);
+  });
+
+  test.skip('should use thisArg as callback context', () => {
+    const context = { threshold: 5 };
+
+    function callback(this: { threshold: number }, v: number) {
+      return v > this.threshold;
+    }
+
+    const result = findIndex.call([1, 3, 6, 8], callback, context);
+
+    expect(result).toBe(2);
   });
 });

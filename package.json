@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "vitest",
     "test:every": "jest ./test/every.spec.js",
     "test:find-index": "jest ./test/find-index.spec.js",
     "test:find": "jest ./test/find.spec.js",

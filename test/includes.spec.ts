@@ -1,4 +1,6 @@
-const { includes } = require('../src/includes');
+import { describe, expect, test } from 'vitest';
+
+import { includes } from '../src/includes';
 
 describe('includes method tests', () => {
   const ARRAY = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
@@ -17,12 +19,6 @@ describe('includes method tests', () => {
 
   test.skip('should return true if the element is present in the array starting from a specific index', () => {
     const result = includes.call(ARRAY, 'c', 2);
-
-    expect(result).toBe(true);
-  });
-
-  test.skip('should return true if the element is present in the array starting from a specific floating point number index', () => {
-    const result = includes.call(ARRAY, 'c', 2.9);
 
     expect(result).toBe(true);
   });

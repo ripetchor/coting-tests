@@ -12,7 +12,7 @@
     "test:reduce": "jest ./test/reduce.spec.js",
     "test:some": "jest ./test/some.spec.js",
     "test:slice": "jest ./test/slice.spec.js",
-    "test:includes": "jest ./test/includes.spec.js",
+    "test:includes": "vitest ./test/includes.spec.ts",
     "test:reverse": "jest ./test/reverse.spec.js",
     "test:concat": "vitest ./test/concat.spec.ts",
     "test:flat": "vitest ./test/flat.spec.ts",

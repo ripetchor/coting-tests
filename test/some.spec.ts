@@ -1,4 +1,6 @@
-const { some } = require('../src/some');
+import { describe, expect, test } from 'vitest';
+
+import { some } from '../src/some';
 
 const ARRAY = [1, 3, 4, 6];
 
@@ -120,6 +122,19 @@ describe('some', () => {
     }
 
     const result = some.call(array, callback);
+
+    expect(result).toBe(expected);
+  });
+
+  test.skip('should use thisArg as `this` in predicate', () => {
+    const expected = true;
+    const context = { threshold: 4 };
+
+    function callback(v) {
+      return v > this.threshold;
+    }
+
+    const result = some.call(ARRAY, callback, context);
 
     expect(result).toBe(expected);
   });
